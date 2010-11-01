@@ -1,0 +1,71 @@
+<!DOCTYPE HTML> 
+<html lang="en"> 
+  <head> 
+    <title>three.js - geometry - cube</title> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/> 
+    <style type="text/css"> 
+      body {
+        font-family: Monospace;
+        background-color: #f0f0f0;
+        margin: 0px;
+        overflow: hidden;
+      }
+    </style>css 
+  </head> 
+  <body> 
+     
+    <script type="text/javascript" src="Three.js"></script> 
+     
+    <script type="text/javascript"text src="Cube.js"></script> 
+    <script type="text/javascript"text src="Sphere.js"></script>      
+
+          
+
+        <script type="text/javascript">
+
+    var camera, scene, renderer, cube, direction =1;
+
+    init();
+    setInterval( loop, 1000 / 60 );
+
+    function init() {
+        var image = new Image();
+        var texture = document.createElement( 'canvas' );
+        material = new THREE.MeshBitmapMaterial( texture );
+        image.onload = function () {
+                material.bitmap = this;
+                material.loaded = 1;
+            };
+        image.src= "yo.png";
+
+        camera = new THREE.Camera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+        camera.position.z = 1000;
+        scene = new THREE.Scene();
+
+       // Cube
+        geometry = new Cube( 10, 200, 200 );
+        for (var i = 0; i < geometry.faces.length; i++) {
+            geometry.faces[i].material = [ new THREE.MeshColorFillMaterial( Math.random() * 0xffffff, 1 ) ];
+        }
+        cube = new THREE.Mesh(geometry, new THREE.MeshFaceMaterial() );
+        cube.position.y = 150;
+        //scene.addObject(new THREE.Mesh(new Sphere(200,30,30, false), material ));
+        scene.addObject( cube );
+
+        renderer = new THREE.CanvasRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( renderer.domElement )
+
+    }
+
+    function loop() {
+
+        renderer.render( scene, camera );
+        cube.position.z +=5 * direction;
+        if (cube.position.z > 800) {direction=-1;}
+        if (cube.position.z < 8) {direction=1;}
+        cube.rotation.y += (0.06 * direction);
+    }
+
+</script>
