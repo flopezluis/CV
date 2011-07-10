@@ -1,0 +1,88 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+.center {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -moz-box-orient: vertical;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    box-orient: vertical;
+    box-pack: center;
+    box-align: center;
+}
+
+#footer-boxes { 
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px; 
+    column-count: 2;
+    column-gap: 10px;}
+.footer-box { 
+    margin: 0 0 10px 0; 
+    display: inline-block; 
+    width: 262px; 
+    height: 130px; 
+    padding: 15px; 
+    background: #e6e2df; 
+    color: #b2aaa4;  
+    border-radius:14px; 
+    -webkit-border-radius:14px; 
+    -moz-border-radius:14px; 
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease; 
+    background-position: 320px 50%; 
+    background-repeat: no-repeat;
+}
+.footer-box h5 { 
+    font-family: "tandelle-1","tandelle-2", Impact; 
+    text-transform: uppercase; 
+    font-size: 38px;
+    line-height: 1;
+    padding: 0 0 10px 0;
+}
+.footer-box:hover h5 { 
+    text-shadow: 0 0 4px rgba(0,0,0,0.4); 
+    color: white; 
+}
+.footer-box:hover p {
+    color: white;
+}
+.footer-box p { 
+    font-size: 12px; 
+    width: 175px; 
+    line-height: 1.5;
+}
+.footer-box:hover { 
+    background-position: 200px 50%;
+}
+
+#management { 
+    background-image: url(yo.png);
+    background-position: 290px 2px;
+}             
+#management:hover {
+    background-color: #c03823;
+    background-position: 186px 2px;
+}        
+#management:hover p { 
+    color: #fee17f; 
+}
+#developer {
+    background-image: url(fb-icon-python.png);
+    background-position: 290px 2px; 
+}             
+#developer:hover { 
+    background-color: #fed300; 
+    background-position: 186px 2px;
+}        
+#developer:hover p { 
+    color: #9f6618;
+}
+
