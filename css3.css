@@ -16,8 +16,15 @@ html, body {
     box-pack: center;
     box-align: center;
 }
-
+#film_scene {
+	border:1px solid silver;
+	background:#FFF;
+    width: 479px;
+    text-align: center;
+    margin: auto;
+}
 #footer-boxes { 
+    margin-top: 10px;
     -moz-column-count: 2;
     -moz-column-gap: 10px;
     -webkit-column-count: 2;
