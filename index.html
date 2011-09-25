@@ -41,7 +41,7 @@ $(document).ready(function(){
             var img = new Image();
             img.src = 'stick2.png';
             sprite = new Sprite(img, {
-                walk: { x:0, y:0, frames: 3, duration: 300, height:112, width:41},
+                walk: { x:0, y:0, frames: 3, duration: 200, height:112, width:41},
                 hit: { x:0, y:112, frames: 6, duration: 100, height:112, width:41, 
                     finish: function() {
                         fsm.quit();
