@@ -98,7 +98,7 @@ $(document).ready(function(){
             break;
             case 'start_speaking':
                 if (sprite.nextFrame(now)) {
-                    if (now - timeLastText > 2000) {
+                    if (now - timeLastText > 2500) {
                         timeLastText = now;
                         if (currentText == texts.length -1) {
                             fsm.break();
